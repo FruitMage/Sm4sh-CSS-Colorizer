@@ -217,15 +217,15 @@ namespace Sm4sh_CSS_Colorizer
         private void save_Click(object sender, EventArgs e)
         {
             //Color Conversion
-            string color1 = colorDisplay1.BackColor.R.ToString("X2") + colorDisplay1.BackColor.B.ToString("X2") + colorDisplay1.BackColor.G.ToString("X2");
+            string color1 = colorDisplay1.BackColor.R.ToString("X2") + colorDisplay1.BackColor.G.ToString("X2") + colorDisplay1.BackColor.B.ToString("X2");
             char[] color1Char = color1.ToCharArray();
-            string color2 = colorDisplay2.BackColor.R.ToString("X2") + colorDisplay2.BackColor.B.ToString("X2") + colorDisplay2.BackColor.G.ToString("X2");
+            string color2 = colorDisplay2.BackColor.R.ToString("X2") + colorDisplay2.BackColor.G.ToString("X2") + colorDisplay2.BackColor.B.ToString("X2");
             char[] color2Char = color2.ToCharArray();
-            string color3 = colorDisplay3.BackColor.R.ToString("X2") + colorDisplay3.BackColor.B.ToString("X2") + colorDisplay3.BackColor.G.ToString("X2");
+            string color3 = colorDisplay3.BackColor.R.ToString("X2") + colorDisplay3.BackColor.G.ToString("X2") + colorDisplay3.BackColor.B.ToString("X2");
             char[] color3Char = color3.ToCharArray();
-            string color4 = colorDisplay4.BackColor.R.ToString("X2") + colorDisplay4.BackColor.B.ToString("X2") + colorDisplay4.BackColor.G.ToString("X2");
+            string color4 = colorDisplay4.BackColor.R.ToString("X2") + colorDisplay4.BackColor.G.ToString("X2") + colorDisplay4.BackColor.B.ToString("X2");
             char[] color4Char = color4.ToCharArray();
-            string color5 = colorDisplay5.BackColor.R.ToString("X2") + colorDisplay5.BackColor.B.ToString("X2") + colorDisplay5.BackColor.G.ToString("X2");
+            string color5 = colorDisplay5.BackColor.R.ToString("X2") + colorDisplay5.BackColor.G.ToString("X2") + colorDisplay5.BackColor.B.ToString("X2");
             char[] color5Char = color5.ToCharArray();
             //Color 1
             int color1RedX = 0;
