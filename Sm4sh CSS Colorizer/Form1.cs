@@ -15,50 +15,50 @@ namespace Sm4sh_CSS_Colorizer
     public partial class Form1 : Form
     {
         //Color 1 offsets
-        int offsetColor1Rx = 13780;
-        int offsetColor1Ry = 13781;
-        int offsetColor1Gx = 13782;
-        int offsetColor1Gy = 13783;
-        int offsetColor1Bx = 13784;
-        int offsetColor1By = 13785;
-        int offsetColor1Ax = 13786;
-        int offsetColor1Ay = 13787;
+        int offsetColor1Rx;
+        int offsetColor1Ry;
+        int offsetColor1Gx;
+        int offsetColor1Gy;
+        int offsetColor1Bx;
+        int offsetColor1By;
+        int offsetColor1Ax;
+        int offsetColor1Ay;
         //Color 2 offsets
-        int offsetColor2Rx = 13788;
-        int offsetColor2Ry = 13789;
-        int offsetColor2Gx = 13790;
-        int offsetColor2Gy = 13791;
-        int offsetColor2Bx = 13792;
-        int offsetColor2By = 13793;
-        int offsetColor2Ax = 13794;
-        int offsetColor2Ay = 13795;
+        int offsetColor2Rx;
+        int offsetColor2Ry;
+        int offsetColor2Gx;
+        int offsetColor2Gy;
+        int offsetColor2Bx;
+        int offsetColor2By;
+        int offsetColor2Ax;
+        int offsetColor2Ay;
         //Color 3 offsets
-        int offsetColor3Rx = 13796;
-        int offsetColor3Ry = 13797;
-        int offsetColor3Gx = 13798;
-        int offsetColor3Gy = 13799;
-        int offsetColor3Bx = 13800;
-        int offsetColor3By = 13801;
-        int offsetColor3Ax = 13802;
-        int offsetColor3Ay = 13803;
+        int offsetColor3Rx;
+        int offsetColor3Ry;
+        int offsetColor3Gx;
+        int offsetColor3Gy;
+        int offsetColor3Bx;
+        int offsetColor3By;
+        int offsetColor3Ax;
+        int offsetColor3Ay;
         //Color 4 offsets
-        int offsetColor4Rx = 13804;
-        int offsetColor4Ry = 13505;
-        int offsetColor4Gx = 13806;
-        int offsetColor4Gy = 13807;
-        int offsetColor4Bx = 13808;
-        int offsetColor4By = 13809;
-        int offsetColor4Ax = 13810;
-        int offsetColor4Ay = 13811;
+        int offsetColor4Rx;
+        int offsetColor4Ry;
+        int offsetColor4Gx;
+        int offsetColor4Gy;
+        int offsetColor4Bx;
+        int offsetColor4By;
+        int offsetColor4Ax;
+        int offsetColor4Ay;
         //Color 4 offsets
-        int offsetColor5Rx = 13812;
-        int offsetColor5Ry = 13813;
-        int offsetColor5Gx = 13814;
-        int offsetColor5Gy = 13815;
-        int offsetColor5Bx = 13816;
-        int offsetColor5By = 13817;
-        int offsetColor5Ax = 13818;
-        int offsetColor5Ay = 13819;
+        int offsetColor5Rx;
+        int offsetColor5Ry;
+        int offsetColor5Gx;
+        int offsetColor5Gy;
+        int offsetColor5Bx;
+        int offsetColor5By;
+        int offsetColor5Ax;
+        int offsetColor5Ay;
 
         string charaLMPath = "";
 
@@ -75,125 +75,126 @@ namespace Sm4sh_CSS_Colorizer
                 charaLMPath = openCharaLM.FileName;
                 string charaLM = openCharaLM.FileName;
                 //Read from chara.lm
-                byte[] charaBytes = File.ReadAllBytes(charaLM);
+                byte[] charaBytes = File.ReadAllBytes(charaLMPath);
+                findColorOffsets();
                 //Combining Color Bytes
                 //Color 1
-                int color1Red = charaBytes[offsetColor1Rx] + charaBytes[offsetColor1Ry];
-                int color1Green = charaBytes[offsetColor1Gx] + charaBytes[offsetColor1Gy];
-                int color1Blue = charaBytes[offsetColor1Bx] + charaBytes[offsetColor1By];
-                int color1Alpha = charaBytes[offsetColor1Ax] + charaBytes[offsetColor1Ay];
+                int color1Red = charaBytes[offsetColor1Ry];
+                int color1Green = charaBytes[offsetColor1Gy];
+                int color1Blue = charaBytes[offsetColor1By];
+                int color1Alpha = charaBytes[offsetColor1Ay];
                 //Color 2
-                int color2Red = charaBytes[offsetColor2Rx] + charaBytes[offsetColor2Ry];
-                int color2Green = charaBytes[offsetColor2Gx] + charaBytes[offsetColor2Gy];
-                int color2Blue = charaBytes[offsetColor2Bx] + charaBytes[offsetColor2By];
-                int color2Alpha = charaBytes[offsetColor2Ax] + charaBytes[offsetColor2Ay];
+                int color2Red = charaBytes[offsetColor2Ry];
+                int color2Green = charaBytes[offsetColor2Gy];
+                int color2Blue = charaBytes[offsetColor2By];
+                int color2Alpha = charaBytes[offsetColor2Ay];
                 //Color 3
-                int color3Red = charaBytes[offsetColor3Rx] + charaBytes[offsetColor3Ry];
-                int color3Green = charaBytes[offsetColor3Gx] + charaBytes[offsetColor3Gy];
-                int color3Blue = charaBytes[offsetColor3Bx] + charaBytes[offsetColor3By];
-                int color3Alpha = charaBytes[offsetColor3Ax] + charaBytes[offsetColor3Ay];
+                int color3Red = charaBytes[offsetColor3Ry];
+                int color3Green = charaBytes[offsetColor3Gy];
+                int color3Blue = charaBytes[offsetColor3By];
+                int color3Alpha = charaBytes[offsetColor3Ay];
                 //Color 4
-                int color4Red = charaBytes[offsetColor4Rx] + charaBytes[offsetColor4Ry];
-                int color4Green = charaBytes[offsetColor4Gx] + charaBytes[offsetColor4Gy];
-                int color4Blue = charaBytes[offsetColor4Bx] + charaBytes[offsetColor4By];
-                int color4Alpha = charaBytes[offsetColor4Ax] + charaBytes[offsetColor4Ay];
+                int color4Red = charaBytes[offsetColor4Ry];
+                int color4Green = charaBytes[offsetColor4Gy];
+                int color4Blue = charaBytes[offsetColor4By];
+                int color4Alpha = charaBytes[offsetColor4Ay];
                 //Color 5
-                int color5Red = charaBytes[offsetColor5Rx] + charaBytes[offsetColor5Ry];
-                int color5Green = charaBytes[offsetColor5Gx] + charaBytes[offsetColor5Gy];
-                int color5Blue = charaBytes[offsetColor5Bx] + charaBytes[offsetColor5By];
-                int color5Alpha = charaBytes[offsetColor5Ax] + charaBytes[offsetColor5Ay];
+                int color5Red = charaBytes[offsetColor5Ry];
+                int color5Green = charaBytes[offsetColor5Gy];
+                int color5Blue = charaBytes[offsetColor5By];
+                int color5Alpha = charaBytes[offsetColor5Ay];
                 //Test if offset X of each color is 01, if it is, set the color to 255.
                 //1
-                if (charaBytes[offsetColor1Rx] == 1)
+                if (charaBytes[offsetColor1Rx].ToString("X2") == "01" && charaBytes[offsetColor1Ry].ToString("X2") == "00")
                 {
                     color1Red = 255;
                 }
-                if (charaBytes[offsetColor1Gx] == 1)
+                if (charaBytes[offsetColor1Gx].ToString("X2") == "01" && charaBytes[offsetColor1Gy].ToString("X2") == "00")
                 {
                     color1Green = 255;
                 }
-                if (charaBytes[offsetColor1Bx] == 1)
+                if (charaBytes[offsetColor1Bx].ToString("X2") == "01" && charaBytes[offsetColor1By].ToString("X2") == "00")
                 {
                     color1Blue = 255;
                 }
-                if (charaBytes[offsetColor1Ax] == 1)
+                if (charaBytes[offsetColor1Ax].ToString("X2") == "01" && charaBytes[offsetColor1Ay].ToString("X2") == "00")
                 {
                     color1Alpha = 255;
                 }
                 //2
-                if (charaBytes[offsetColor2Rx] == 1)
+                if (charaBytes[offsetColor2Rx].ToString("X2") == "01" && charaBytes[offsetColor2Ry].ToString("X2") == "00")
                 {
                     color2Red = 255;
                 }
-                if (charaBytes[offsetColor2Gx] == 1)
+                if (charaBytes[offsetColor2Gx].ToString("X2") == "01" && charaBytes[offsetColor2Gy].ToString("X2") == "00")
                 {
                     color2Green = 255;
                 }
-                if (charaBytes[offsetColor2Bx] == 1)
+                if (charaBytes[offsetColor2Bx].ToString("X2") == "01" && charaBytes[offsetColor2By].ToString("X2") == "00")
                 {
                     color2Blue = 255;
                 }
-                if (charaBytes[offsetColor2Ax] == 1)
+                if (charaBytes[offsetColor2Ax].ToString("X2") == "01" && charaBytes[offsetColor2Ay].ToString("X2") == "00")
                 {
                     color2Alpha = 255;
                 }
                 //3
-                if (charaBytes[offsetColor3Rx] == 1)
+                if (charaBytes[offsetColor3Rx].ToString("X2") == "01" && charaBytes[offsetColor3Ry].ToString("X2") == "00")
                 {
                     color3Red = 255;
                 }
-                if (charaBytes[offsetColor3Gx] == 1)
+                if (charaBytes[offsetColor3Gx].ToString("X2") == "01" && charaBytes[offsetColor3Gy].ToString("X2") == "00")
                 {
                     color3Green = 255;
                 }
-                if (charaBytes[offsetColor3Bx] == 1)
+                if (charaBytes[offsetColor3Bx].ToString("X2") == "01" && charaBytes[offsetColor3By].ToString("X2") == "00")
                 {
                     color3Blue = 255;
                 }
-                if (charaBytes[offsetColor3Ax] == 1)
+                if (charaBytes[offsetColor3Ax].ToString("X2") == "01" && charaBytes[offsetColor3Ay].ToString("X2") == "00")
                 {
                     color3Alpha = 255;
                 }
                 //4
-                if (charaBytes[offsetColor4Rx] == 1)
+                if (charaBytes[offsetColor4Rx].ToString("X2") == "01" && charaBytes[offsetColor4Ry].ToString("X2") == "00")
                 {
                     color4Red = 255;
                 }
-                if (charaBytes[offsetColor4Gx] == 1)
+                if (charaBytes[offsetColor4Gx].ToString("X2") == "01" && charaBytes[offsetColor4Gy].ToString("X2") == "00")
                 {
                     color4Green = 255;
                 }
-                if (charaBytes[offsetColor4Bx] == 1)
+                if (charaBytes[offsetColor4Bx].ToString("X2") == "01" && charaBytes[offsetColor4By].ToString("X2") == "00")
                 {
                     color4Blue = 255;
                 }
-                if (charaBytes[offsetColor4Ax] == 1)
+                if (charaBytes[offsetColor4Ax].ToString("X2") == "01" && charaBytes[offsetColor4Ay].ToString("X2") == "00")
                 {
                     color4Alpha = 255;
                 }
                 //5
-                if (charaBytes[offsetColor5Rx] == 1)
+                if (charaBytes[offsetColor5Rx].ToString("X2") == "01" && charaBytes[offsetColor5Ry].ToString("X2") == "00")
                 {
                     color5Red = 255;
                 }
-                if (charaBytes[offsetColor5Gx] == 1)
+                if (charaBytes[offsetColor5Gx].ToString("X2") == "01" && charaBytes[offsetColor5Gy].ToString("X2") == "00")
                 {
                     color5Green = 255;
                 }
-                if (charaBytes[offsetColor5Bx] == 1)
+                if (charaBytes[offsetColor5Bx].ToString("X2") == "01" && charaBytes[offsetColor5By].ToString("X2") == "00")
                 {
                     color5Blue = 255;
                 }
-                if (charaBytes[offsetColor5Ax] == 1)
+                if (charaBytes[offsetColor5Ax].ToString("X2") == "01" && charaBytes[offsetColor5Ay].ToString("X2") == "00")
                 {
                     color5Alpha = 255;
                 }
                 //Color Conversion
-                Color color1 = ColorTranslator.FromHtml("#" + color1Red.ToString("X") + color1Green.ToString("X") + color1Blue.ToString("X"));
-                Color color2 = ColorTranslator.FromHtml("#" + color2Red.ToString("X") + color2Green.ToString("X") + color2Blue.ToString("X"));
-                Color color3 = ColorTranslator.FromHtml("#" + color3Red.ToString("X") + color3Green.ToString("X") + color3Blue.ToString("X"));
-                Color color4 = ColorTranslator.FromHtml("#" + color4Red.ToString("X") + color4Green.ToString("X") + color4Blue.ToString("X"));
-                Color color5 = ColorTranslator.FromHtml("#" + color5Red.ToString("X") + color5Green.ToString("X") + color5Blue.ToString("X"));
+                Color color1 = ColorTranslator.FromHtml("#" + color1Red.ToString("X2") + color1Green.ToString("X2") + color1Blue.ToString("X2"));
+                Color color2 = ColorTranslator.FromHtml("#" + color2Red.ToString("X2") + color2Green.ToString("X2") + color2Blue.ToString("X2"));
+                Color color3 = ColorTranslator.FromHtml("#" + color3Red.ToString("X2") + color3Green.ToString("X2") + color3Blue.ToString("X2"));
+                Color color4 = ColorTranslator.FromHtml("#" + color4Red.ToString("X2") + color4Green.ToString("X2") + color4Blue.ToString("X2"));
+                Color color5 = ColorTranslator.FromHtml("#" + color5Red.ToString("X2") + color5Green.ToString("X2") + color5Blue.ToString("X2"));
                 //Set Colors
                 colorDisplay1.BackColor = color1;
                 colorDisplay2.BackColor = color2;
@@ -207,6 +208,7 @@ namespace Sm4sh_CSS_Colorizer
                 alphaBox4.Value = color4Alpha;
                 alphaBox5.Value = color5Alpha;
                 colors.Enabled = true;
+                //Console.WriteLine("Byte: 0x" + offsetColor1Rx.ToString("X9") + " | 0x" + charaBytes[offsetColor1Rx].ToString("X2"));
             }
             catch
             {
@@ -427,6 +429,86 @@ namespace Sm4sh_CSS_Colorizer
             charaLMBytes[offsetColor5Ay] = Convert.ToByte(color5AlphaY);
             
             File.WriteAllBytes(charaLMPath, charaLMBytes);
+        }
+
+        public void findColorOffsets()
+        {
+            byte[] charaBytes = File.ReadAllBytes(charaLMPath);
+            //Console.WriteLine("Byte: 0x" + offsetColor1Rx.ToString("X9") + " | 0x" + charaBytes[offsetColor1Rx].ToString("X2"));
+            int lastByte = 0;
+            string currentByte = "";
+            for (int i = 0; i < charaBytes.Length; i++)
+            {
+                currentByte = charaBytes[i].ToString("X2");
+                lastByte = i - 1;
+                //Console.WriteLine("Byte: 0x" + i.ToString("X9") + " | 0x" + currentByte);
+                if (lastByte >= 0)
+                {
+                    if (charaBytes[lastByte].ToString("X2") == "F0")
+                    {
+                        if (charaBytes[i].ToString("X2") == "02")
+                        {
+                            //Color 1 offsets
+                            offsetColor1Rx = i + 1737;
+                            offsetColor1Ry = i + 1738;
+                            offsetColor1Gx = i + 1739;
+                            offsetColor1Gy = i + 1740;
+                            offsetColor1Bx = i + 1741;
+                            offsetColor1By = i + 1742;
+                            offsetColor1Ax = i + 1743;
+                            offsetColor1Ay = i + 1744;
+                            //Color 2 offsets
+                            offsetColor2Rx = i + 1745;
+                            offsetColor2Ry = i + 1746;
+                            offsetColor2Gx = i + 1747;
+                            offsetColor2Gy = i + 1748;
+                            offsetColor2Bx = i + 1749;
+                            offsetColor2By = i + 1750;
+                            offsetColor2Ax = i + 1751;
+                            offsetColor2Ay = i + 1752;
+                            //Color 3 offsets
+                            offsetColor3Rx = i + 1753;
+                            offsetColor3Ry = i + 1754;
+                            offsetColor3Gx = i + 1755;
+                            offsetColor3Gy = i + 1756;
+                            offsetColor3Bx = i + 1757;
+                            offsetColor3By = i + 1758;
+                            offsetColor3Ax = i + 1759;
+                            offsetColor3Ay = i + 1760;
+                            //Color 4 offsets
+                            offsetColor4Rx = i + 1761;
+                            offsetColor4Ry = i + 1762;
+                            offsetColor4Gx = i + 1763;
+                            offsetColor4Gy = i + 1764;
+                            offsetColor4Bx = i + 1765;
+                            offsetColor4By = i + 1766;
+                            offsetColor4Ax = i + 1767;
+                            offsetColor4Ay = i + 1768;
+                            //Color 4 offsets
+                            offsetColor5Rx = i + 1769;
+                            offsetColor5Ry = i + 1770;
+                            offsetColor5Gx = i + 1771;
+                            offsetColor5Gy = i + 1772;
+                            offsetColor5Bx = i + 1773;
+                            offsetColor5By = i + 1774;
+                            offsetColor5Ax = i + 1775;
+                            offsetColor5Ay = i + 1776;
+                            /*
+                            Console.WriteLine("Found Flame Color Offsets:");
+                            Console.WriteLine("Byte: 0x" + offsetColor1Rx.ToString("X9") + " | 0x" + charaBytes[offsetColor1Rx].ToString("X2"));
+                            Console.WriteLine("Byte: 0x" + offsetColor1Ry.ToString("X9") + " | 0x" + charaBytes[offsetColor1Ry].ToString("X2"));
+                            Console.WriteLine("Byte: 0x" + offsetColor1Gx.ToString("X9") + " | 0x" + charaBytes[offsetColor1Gx].ToString("X2"));
+                            Console.WriteLine("Byte: 0x" + offsetColor1Gy.ToString("X9") + " | 0x" + charaBytes[offsetColor1Gy].ToString("X2"));
+                            Console.WriteLine("Byte: 0x" + offsetColor1Bx.ToString("X9") + " | 0x" + charaBytes[offsetColor1Bx].ToString("X2"));
+                            Console.WriteLine("Byte: 0x" + offsetColor1By.ToString("X9") + " | 0x" + charaBytes[offsetColor1By].ToString("X2"));
+                            Console.WriteLine("Byte: 0x" + offsetColor1Ax.ToString("X9") + " | 0x" + charaBytes[offsetColor1Ax].ToString("X2"));
+                            Console.WriteLine("Byte: 0x" + offsetColor1Ay.ToString("X9") + " | 0x" + charaBytes[offsetColor1Ay].ToString("X2"));
+                            */
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         //Alpha 1
